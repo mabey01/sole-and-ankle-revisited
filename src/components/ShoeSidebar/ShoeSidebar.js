@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS, WEIGHTS } from '../../constants';
+import { WEIGHTS } from "../../constants";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <Link href="/lifestyle">Lifestyle</Link>
       <Link href="/jordan">Jordan</Link>
       <ActiveLink href="/running">Running</ActiveLink>
@@ -29,12 +29,12 @@ const Link = styled.a`
   display: block;
   text-decoration: none;
   font-weight: ${WEIGHTS.medium};
-  color: ${COLORS.gray[900]};
+  color: var(--gray-900-color);
   line-height: 2;
 `;
 
 const ActiveLink = styled(Link)`
-  color: ${COLORS.primary};
+  color: var(--primary-color);
 `;
 
 export default Sidebar;
